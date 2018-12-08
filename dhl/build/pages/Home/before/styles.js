@@ -2,7 +2,8 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     box: {
         height: 195,
-        width: '100%'
+        width: '100%',
+        backgroundColor: "#FFFFFF",
     },
     imgbefore: {
         width: '100%',
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 90,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-around'
     },
 });
 export default styles;

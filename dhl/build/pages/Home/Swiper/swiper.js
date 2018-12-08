@@ -13,7 +13,7 @@ class SwiperBox extends Component {
             React.createElement(Image, { style: styles.swiperImage, source: { uri: item.bannerImg } }))))));
     }
     render() {
-        return (React.createElement(View, { style: { height: 183, marginTop: 84 } }, this.renderItem()));
+        return (React.createElement(View, { style: { height: 183 } }, this.renderItem()));
     }
 }
 export default SwiperBox;

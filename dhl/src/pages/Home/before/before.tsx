@@ -16,9 +16,10 @@ class Before extends Component<Props>{
                 <View style={styles.list}>
                     {
                         this.props.list2.map((item,i)=>(
-                             <Image style={styles.img} key={i} source={{uri:item.bannerImg}}></Image> 
+                             <Image style={{width:"45%",height:"100%"}} key={i} source={{uri:item.bannerImg}}></Image> 
                         ))
                     }
+
                 </View>
             </View>
         )

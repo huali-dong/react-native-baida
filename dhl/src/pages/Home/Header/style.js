@@ -1,14 +1,14 @@
 import { StyleSheet } from "react-native"
 const styles = StyleSheet.create({
     box:{
-        position:'absolute',
+        // position:'absolute',
+        // top:40,
         height:44,
         width:'100%',
-        marginTop: 40,
         backgroundColor:"#fff",
         borderColor: "#ccc",
-        borderWidth:1,
-        borderStyle:"solid",
+        // borderWidth:1,
+        // borderStyle:"solid",
         alignItems:'center',
         flexDirection:'row'
     },

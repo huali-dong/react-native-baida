@@ -1,11 +1,13 @@
 import React,{Component} from "react"
-import {View,Alert,Image} from "react-native"
+import {View,Image} from "react-native"
 import  styles from "./styles"
-import Fetch from "../../../util/fetch"
+import {observer,inject} from "mobx-react"
 interface Props{
     list1:Array<any>,
     list2:Array<any>
 }
+@inject("store")
+@observer
 class NavBox extends Component<Props>{
     constructor(props:any){
         super(props)

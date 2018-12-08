@@ -2,7 +2,6 @@ import React,{Component} from "react"
 import {View,Image} from "react-native"
 import Swiper from "react-native-swiper"
 import styles from "./style"
-import { any } from "prop-types";
 interface Props{
     list:Array<any>
 }
@@ -26,7 +25,7 @@ class SwiperBox extends Component<Props>{
     }
     render(){
         return(
-            <View style={{height:183,marginTop:84}}>  
+            <View style={{height:183}}>  
                  {this.renderItem()}
             </View>
         )

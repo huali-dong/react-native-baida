@@ -8,7 +8,7 @@ class Before extends Component {
     render() {
         return (React.createElement(View, { style: styles.box },
             React.createElement(Image, { style: styles.imgbefore, source: { uri: this.props.list1[0].bannerImg } }),
-            React.createElement(View, { style: styles.list }, this.props.list2.map((item, i) => (React.createElement(Image, { style: styles.img, key: i, source: { uri: item.bannerImg } }))))));
+            React.createElement(View, { style: styles.list }, this.props.list2.map((item, i) => (React.createElement(Image, { style: { width: "45%", height: "100%" }, key: i, source: { uri: item.bannerImg } }))))));
     }
 }
 export default Before;

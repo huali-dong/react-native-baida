@@ -6,7 +6,4 @@ class Test extends Component {
     }
 }
 export default Test;
-import { StyleSheet } from "react-native";
-const styles = StyleSheet.create({});
-export default styles;
 //# sourceMappingURL=index.js.map

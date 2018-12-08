@@ -1,14 +1,13 @@
 import React,{Component} from "react"
 import {View, ScrollView} from "react-native"
 import Swiper from "./Swiper/swiper"
-import Header from "./Header/Header"
 import Nav from "./Nav/nav"
 import Before from "./before/before"
 import Second from "./Second/second"
 import Fetch from "../../util/fetch"
-
+import {inject,observer} from "mobx-react"
 interface Props{
-
+    store?:any
 }
 interface State{
     list0:Array<any>,
@@ -17,7 +16,9 @@ interface State{
     list3:Array<any>,
     list4:Array<any>,
 }
-
+//将mobx中store的数据注入进来
+@inject("store")
+@observer
 class HomeBox extends Component<Props,State>{
     constructor(props:any){
         super(props)
@@ -26,8 +27,12 @@ class HomeBox extends Component<Props,State>{
             list1:[],
             list2:[],
             list3:[],
-            list4:[]
+            list4:[],
         }
+    }
+    async componentDidMount(){
+          await this.props.store.Homedata.getHomeAsync()
+            // Alert.alert(JSON.stringify(this.props.store.Homedata))
     }
     componentWillMount(){
         Fetch("/api/bd-marketing/api/channel/getNewHeadPageData?_t=1543652309598")
@@ -45,7 +50,6 @@ class HomeBox extends Component<Props,State>{
         if(this.state.list0.length==0) return false;
         return (
             <View style={{flex:1,position:'relative'}}>
-                <Header/>  
                 <Swiper list={this.state.list0}/>
                 <Nav list1= {this.state.list1} list2={this.state.list2}/>
                 <Before list1={this.state.list3} list2 ={this.state.list4}></Before>
@@ -55,9 +59,9 @@ class HomeBox extends Component<Props,State>{
     }
     render(){
         return(
-            <ScrollView>
-                {this.renderBox()}
-            </ScrollView>
+                <ScrollView>
+                    {this.renderBox()}
+                </ScrollView>
         )
     }
 
